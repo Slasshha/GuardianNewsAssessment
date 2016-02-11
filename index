@@ -1,0 +1,15 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Top 10 News</title>
+</head>
+<body>
+<h1>
+The Guardian News 
+</h1>
+
+<ul id="news">
+</ul>
+
+</body>
+</html> 
