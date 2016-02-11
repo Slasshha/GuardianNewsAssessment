@@ -1,11 +1,26 @@
 h1 {
-    margin: 1em 0 0.5em 0;
+    margin: 1em 0 1em 0;
     color: #343434;
     font-weight: normal;
     font-family: 'Ultra', sans-serif;  
-    font-size: 36px;   
+    font-size: 40px;   
     text-shadow: 0 2px white, 0 3px #777;
     text-align: center;
+}
+
+li {
+     margin-top: 7px;
+
+}
+
+#link-container {
+     
+     padding-left: 30px;
+}
+
+a {
+     font-size: 30px; 
+    
 }
 
 a:link {
