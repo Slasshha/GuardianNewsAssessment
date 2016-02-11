@@ -1,4 +1,4 @@
-h1 {
+.title {
     margin: 1em 0 1em 0;
     color: #343434;
     font-weight: normal;
@@ -13,7 +13,7 @@ li {
 
 }
 
-#link-container {
+.link-container {
      
      padding-left: 60px;
 }
