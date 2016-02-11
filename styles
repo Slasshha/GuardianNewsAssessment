@@ -1,0 +1,25 @@
+h1 {
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: normal;
+    font-family: 'Ultra', sans-serif;  
+    font-size: 36px;   
+    text-shadow: 0 2px white, 0 3px #777;
+    text-align: center;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}
