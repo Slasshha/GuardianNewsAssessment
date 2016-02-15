@@ -40,3 +40,12 @@ a:hover {
 a:active {
     color: blue;
 }
+
+.refresh {
+  text-align: center;  
+}
+
+.errorResponse {
+    color: red;
+    text-align: center;  
+}
