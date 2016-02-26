@@ -28,6 +28,9 @@
             $.ajax($(this).data('text'), {
                 success: function (response) {
                     console.log(response);
+                    console.log( $(this).data('text') );
+                    console.log("pressed this li");
+
                 }
             });
         }
@@ -43,6 +46,11 @@
 
         $('li').on('click', function () {
             expandText();
+        });
+
+
+        $('li').click( function (e) {
+            alert($(this).text());
         });
     });
 
