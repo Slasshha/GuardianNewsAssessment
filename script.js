@@ -29,11 +29,11 @@
                 success: function (response) {
                     console.log(response);
                     console.log( $(this).data('text') );
-                    console.log("pressed this li");
-
+                   
                 }
             });
-        }
+            }
+        
 
 
 
@@ -44,13 +44,11 @@
             getTopNews();
         });
 
-        $('li').on('click', function () {
+      
+
+        $('.news').on('click', 'li', function (e) {
+            console.log('clickkk');
             expandText();
-        });
-
-
-        $('li').click( function (e) {
-            alert($(this).text());
         });
     });
 
