@@ -50,18 +50,30 @@ $(document).ready(function () {
     $('.news').on('click', 'li', function (e) {
         var currentLi = $(this);
 
-        console.log($(this).data('text'));
+        
 
-        currentLi.data('collapsed') = !currentLi.data('collapsed');
+        currentLi.data('collapsed', !currentLi.data('collapsed')) ;
+
         console.log(currentLi.data('collapsed'));
-        $.ajax($(this).data('text'), {
-            success: function (response) {
-                console.log(response);
-                var textSummary = response.response.content.blocks.body[0].bodyTextSummary;
-                currentLi.append("<p class=summary>" + textSummary + "</p>");
 
-            }
-        });
+
+        if (!currentLi.data('collapsed')) {
+
+             $.ajax($(this).data('text'), {
+            success: function (response) {
+               console.log(response);
+                var textSummary = response.response.content.blocks.body[0].bodyTextSummary;
+                var newsLink = response.response.content.webUrl;
+                currentLi.append("<p class=summary>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>");
+
+                 }
+            });
+
+
+        } else {
+            currentLi.find('.summary').html('');
+        }
+
     });
 
 })

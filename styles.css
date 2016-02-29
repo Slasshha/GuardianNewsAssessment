@@ -10,8 +10,8 @@
 
 li {
      margin-top: 7px;
-
-}
+     
+     }
 
 .link-container {
      
@@ -19,21 +19,19 @@ li {
 }
 
 a {
-     font-size: 25px; 
-     text-decoration: none;
-     margin-left: 20px;
+     
     
 }
 
 a:link {
-    color: black;
+    
 }
 
 a:visited {
     color: green;
 }
 
-a:hover {
+li:hover {
     color: hotpink;
 }
 
