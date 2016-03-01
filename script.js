@@ -11,9 +11,8 @@ $(document).ready(function () {
                     var newsLink = el.webUrl;
                     var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                      
                         
-                    $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>" + title + "</li>");                      
+                    $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>" + title + "<span class='arrowCollapsed'> </span>  </li>");                      
                 });
-
             },
 
             error: function (response) {
