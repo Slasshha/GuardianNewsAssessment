@@ -29,14 +29,14 @@ li:first-child {
     width: 40px;
     height: 40px;
     float: right;
-    background-image: url('http://i60.tinypic.com/jjo5fl.png');
+    background-image: url('C:/GuardianNews/images/arrow_down.jpg');
 }  
 
 .arrowExpanded {
     width: 40px;
     height: 40px;
     float: right;
-    background-image: url('');
+    background-image: url('images/arrow_right.jpeg');
 
 }
 

@@ -63,7 +63,7 @@ $(document).ready(function () {
                console.log(response);
                 var textSummary = response.response.content.blocks.body[0].bodyTextSummary;
                 var newsLink = response.response.content.webUrl;
-                currentLi.append("<p class=summary>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").findChild('span').removeClass('arrowCollapsed').addClass('arrowExpanded');
+                currentLi.append("<p class=summary>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").children('span').removeClass('arrowCollapsed').addClass('arrowExpanded');
 
                  }
             });
