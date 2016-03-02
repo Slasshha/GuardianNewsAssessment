@@ -11,7 +11,8 @@ $(document).ready(function () {
                     var newsLink = el.webUrl;
                     var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                      
                         
-                    $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>" + title + "<span class='arrowCollapsed'> </span>  </li>");                      
+                    $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>  <h3 class=articleTitle>" + title + "</h3> <span class='arrowCollapsed'> </span>  </li>");
+
                 });
             },
 
@@ -64,6 +65,7 @@ $(document).ready(function () {
                 var textSummary = response.response.content.blocks.body[0].bodyTextSummary;
                 var newsLink = response.response.content.webUrl;
                 currentLi.append("<p class=summary>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").children('span').removeClass('arrowCollapsed').addClass('arrowExpanded');
+                currentLi.addClass('clicked');
 
                  }
             });
@@ -71,7 +73,8 @@ $(document).ready(function () {
 
         } else {
             currentLi.find('.summary').html('');
-			currentLi.children('span').removeClass('arrowExpanded').addClass('arrowCollapsed');
+            currentLi.children('span').removeClass('arrowExpanded').addClass('arrowCollapsed');
+            currentLi.removeClass('clicked');
         }
 
     });

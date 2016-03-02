@@ -1,5 +1,5 @@
 .title {
-    margin: 1em 0 1em 0;
+    margin: 1em 0 0 0;
     color: #343434;
     font-weight: normal;
     font-family: 'Ultra', sans-serif;  
@@ -14,17 +14,26 @@ li {
      border-left: 2px solid #1a1a1a;
      border-right: 2px solid #1a1a1a;
      border-color: black;
-	 min-height:50px;
-l     
+	 min-height:50px;     
      list-style-type: none;
      padding-left: 10px;
      padding-top: 10px;
      padding-right: 10px;
+    
      }
 
 li:first-child {
     border-top: 2px solid #1a1a1a;
 }   
+
+
+.clicked {
+     background-color: #B2DFEE;
+}
+
+.articleTitle {
+    font-weight: bold;
+}
 
 .arrowCollapsed {
     width: 32px;
@@ -40,37 +49,17 @@ li:first-child {
     background-image: url('images/ic_collapse_32.png');
 }
 
-.link-container {
-     
-     padding-left: 60px;
-}
-
-a {
-     
-    
-}
-
-a:link {
-    
-}
-
-a:visited {
-    color: green;
-}
-
-li:hover {
-    color: blue;
-}
-
-a:active {
-    color: blue;
-}
 
 .refresh {
   text-align: center;  
+  padding: 35px;
 }
 
 .errorResponse {
     color: red;
     text-align: center;  
+}
+
+.news {
+    padding-right: 40px;
 }
