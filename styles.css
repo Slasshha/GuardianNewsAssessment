@@ -13,8 +13,9 @@ li {
      border-bottom: 2px solid #1a1a1a;
      border-left: 2px solid #1a1a1a;
      border-right: 2px solid #1a1a1a;
-     
      border-color: black;
+	 min-height:50px;
+l     
      list-style-type: none;
      padding-left: 10px;
      padding-top: 10px;
@@ -26,18 +27,17 @@ li:first-child {
 }   
 
 .arrowCollapsed {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     float: right;
-    background-image: url('C:/GuardianNews/images/arrow_down.jpg');
+    background-image: url('images/ic_expand_32.png');	
 }  
 
 .arrowExpanded {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     float: right;
-    background-image: url('images/arrow_right.jpeg');
-
+    background-image: url('images/ic_collapse_32.png');
 }
 
 .link-container {

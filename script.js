@@ -71,6 +71,7 @@ $(document).ready(function () {
 
         } else {
             currentLi.find('.summary').html('');
+			currentLi.children('span').removeClass('arrowExpanded').addClass('arrowCollapsed');
         }
 
     });
