@@ -63,3 +63,7 @@ li:first-child {
 .news {
     padding-right: 40px;
 }
+
+.summary {
+    display: none;
+}

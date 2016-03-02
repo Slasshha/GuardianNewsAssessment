@@ -11,7 +11,7 @@ $(document).ready(function () {
                     var newsLink = el.webUrl;
                     var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                      
                         
-                    $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class=articleTitle>" + title + "</span> <span class='arrowCollapsed arrow'> </span>  </li>");
+                    $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class='articleTitle'>" + title + "</span> <span class='arrowCollapsed arrow'> </span>  </li>");
 
                 });
             },
@@ -48,9 +48,7 @@ $(document).ready(function () {
       
 
     $('.news').on('click', 'li', function (e) {
-        var currentLi = $(this);
-
-        
+        var currentLi = $(this);        
 
         currentLi.data('collapsed', !currentLi.data('collapsed')) ;
 
@@ -64,7 +62,9 @@ $(document).ready(function () {
                console.log(response);
                 var textSummary = response.response.content.blocks.body[0].bodyTextSummary;
                 var newsLink = response.response.content.webUrl;
-                currentLi.append("<p class=summary>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").children('.arrow').removeClass('arrowCollapsed').addClass('arrowExpanded');
+                
+                currentLi.append("<p class='summary'>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").children('.arrow').removeClass('arrowCollapsed').addClass('arrowExpanded');
+                currentLi.find('.summary').slideDown('slow'); 
                 currentLi.addClass('clicked');
 
                  }
@@ -72,7 +72,7 @@ $(document).ready(function () {
 
 
         } else {
-            currentLi.find('.summary').html('');
+            currentLi.find('.summary').slideUp('slow');
             currentLi.children('.arrow').removeClass('arrowExpanded').addClass('arrowCollapsed');
             currentLi.removeClass('clicked');
         }
