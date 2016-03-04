@@ -10,10 +10,17 @@ $(document).ready(function () {
                     var title = el.webTitle;
                     var newsLink = el.webUrl;
                     var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                      
-                        
+                    
                     $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class='articleTitle'>" + title + "</span> <span class='arrowCollapsed arrow'> </span>  </li>");
 
+            
                 });
+
+                function (response) {
+                var numPages = response.pages;
+                $('.pages-quantity').text('of' + numPages + 'pages');  }
+
+
             },
 
             error: function (response) {
@@ -22,21 +29,8 @@ $(document).ready(function () {
         });            
            
 
-    }
+    }    
         
-    function expandText() {
-        console.log( $(this).data('text'));
-        $.ajax($(this).data('text'), {
-            success: function (response) {
-                console.log(response);
-                console.log( $(this).data('text') );
-                   
-            }
-        });
-    }
-        
-
-
 
     getTopNews();
 
@@ -52,17 +46,15 @@ $(document).ready(function () {
 
         currentLi.data('collapsed', !currentLi.data('collapsed')) ;
 
-        console.log(currentLi.data('collapsed'));
-
-
+        
         if (!currentLi.data('collapsed')) {
 
              $.ajax($(this).data('text'), {
             success: function (response) {
-               console.log(response);
                 var textSummary = response.response.content.blocks.body[0].bodyTextSummary;
                 var newsLink = response.response.content.webUrl;
-                
+
+                                
                 if(currentLi.find('.summary').length > 0) {                
                 currentLi.find('.summary').slideDown('slow'); 
                 currentLi.addClass('clicked');
