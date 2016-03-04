@@ -63,9 +63,17 @@ $(document).ready(function () {
                 var textSummary = response.response.content.blocks.body[0].bodyTextSummary;
                 var newsLink = response.response.content.webUrl;
                 
+                if(currentLi.find('.summary').length > 0) {                
+                currentLi.find('.summary').slideDown('slow'); 
+                currentLi.addClass('clicked');
+                      }
+
+                else {  
                 currentLi.append("<p class='summary'>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").children('.arrow').removeClass('arrowCollapsed').addClass('arrowExpanded');
                 currentLi.find('.summary').slideDown('slow'); 
                 currentLi.addClass('clicked');
+                }
+
 
                  }
             });
