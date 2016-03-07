@@ -6,6 +6,10 @@ $(document).ready(function () {
             
         $.ajax('https://content.guardianapis.com/search?api-key=test', {
             success: function (response) {
+
+                var numPages = response.pages;
+                $('.pages-quantity').text('of ' + numPages + ' pages');  
+
                 response.response.results.forEach(function (el) {
                     var title = el.webTitle;
                     var newsLink = el.webUrl;
@@ -16,10 +20,7 @@ $(document).ready(function () {
             
                 });
 
-                function (response) {
-                var numPages = response.pages;
-                $('.pages-quantity').text('of' + numPages + 'pages');  }
-
+               
 
             },
 
