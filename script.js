@@ -3,19 +3,24 @@
 $(document).ready(function () {
         
     function getTopNews() {
-            
-        $.ajax('https://content.guardianapis.com/search?api-key=test', {
+            var requestPage = 3;
+        $.ajax('https://content.guardianapis.com/search?api-key=test&currentPage=3'+ requestPage, {
             success: function (response) {
 
-                var numPages = response.pages;
-                $('.pages-quantity').text('of ' + numPages + ' pages');  
+                var numPages = response.response.pages;
+                var currentPage = response.response.currentPage;
+
+                console.log(response.pages);
+                console.log(response);
+                $('.pages-quantity').text('of ' + numPages + ' pages'); 
+                $('.current').text(currentPage); 
 
                 response.response.results.forEach(function (el) {
                     var title = el.webTitle;
                     var newsLink = el.webUrl;
                     var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                      
                     
-                    $('.news').append("<li data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class='articleTitle'>" + title + "</span> <span class='arrowCollapsed arrow'> </span>  </li>");
+                    $('.news').append("<li class='newsLine' data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class='articleTitle'>" + title + "</span> <span class='arrowCollapsed arrow'> </span>  </li>");
 
             
                 });
@@ -79,5 +84,9 @@ $(document).ready(function () {
         }
 
     });
+
+    $('.next').on('click', function(e) {
+
+    })
 
 })

@@ -5,11 +5,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="script.js"></script>
         <link rel="stylesheet" href="styles.css">
-        <link href='https://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css">
     </head>
     <body>
         <h1 class="title">The Guardian News</h1>
-        <div > 
+        <div class="button-wrapper">
             <button class = "refresh"> Refresh </button>
         </div>    
         <div class="link-container">
@@ -18,12 +18,13 @@
          <div class = "error-response">        
         </div>
 
-        <div class="navbar">
-           <button class="previous">Previous page</button> 
-           <button class="current"> </button>
-           <p class="pages-quantity"> </p> 
-           <button class="next">Next page</button>
-        </div>
+        <ul class="pages">
 
+           <li class="previous"> <a href="#"> Previous Page </a> </li> 
+           <li class="current">  </li>
+           <li class="pages-quantity"> <a href="#"> </a> </li> 
+           <li class="next"> <a href="#"> Next Page </a> </li>
+        
+        </ul>
     </body>
 </html> 

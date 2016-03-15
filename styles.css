@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-li {
+.newsLine {
      
      border-bottom: 2px solid #1a1a1a;
      border-left: 2px solid #1a1a1a;
@@ -22,7 +22,11 @@ li {
     
      }
 
-li:first-child {
+li {
+list-style-type: none;
+}
+
+.newsLine:first-child {
     border-top: 2px solid #1a1a1a;
 }   
 
@@ -51,8 +55,7 @@ li:first-child {
 
 
 .refresh {
-  text-align: center;  
-  padding: 35px;
+ 
 }
 
 .errorResponse {
@@ -67,3 +70,24 @@ li:first-child {
 .summary {
     display: none;
 }
+
+
+.previous, .next, .current, .pages-quantity {
+    display: inline-block;
+}
+
+.previous, {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+.current, {
+padding-left: 100px;
+}
+
+.button-wrapper{ 
+    text-align: center; 
+    padding-top: 25px;}
