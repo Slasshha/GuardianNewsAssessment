@@ -12,12 +12,29 @@ $(document).ready(function () {
 
                 console.log(response);
                 $('.pages-quantity').text('of ' + numPages + ' pages'); 
-                currentPage = $('.current').val(); 
+                $('.current').val(currentPage); 
+
+                if (currentPage === 1) {
+                    $('.previous').prop("disabled",true);
+                }
+
+                if (currentPage === numPages) {
+                     $('.next').prop("disabled",true);
+                }
+
+                else {
+                    $('.previous').prop("disabled", false);
+                    $('.next').prop("disabled",false);
+                }
+
+
+
+
 
                 response.response.results.forEach(function (el) {
                     var title = el.webTitle;
                     var newsLink = el.webUrl;
-                    var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                      
+                    var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                   
                     
                     $('.news').append("<li class='newsLine' data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class='articleTitle'>" + title + "</span> <span class='arrowCollapsed arrow'> </span>  </li>");
 
@@ -97,5 +114,8 @@ $(document).ready(function () {
         $('.news').html('');
         getTopNews(currentPage-1);
     })
+
+
+
 
 })
