@@ -74,20 +74,25 @@ list-style-type: none;
 
 .previous, .next, .current, .pages-quantity {
     display: inline-block;
+    
 }
 
-.previous, {
-    float: left;
+.previous, .next {
+    
+    margin-left: 200px;
+}
+.pages {
+margin-left: auto;
+margin-right: auto;
+width:1600px;
 }
 
-.next {
-    float: right;
-}
-
-.current, {
-padding-left: 100px;
-}
 
 .button-wrapper{ 
     text-align: center; 
     padding-top: 25px;}
+
+
+.current {
+    width: 30px;
+}

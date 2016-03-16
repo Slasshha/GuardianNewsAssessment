@@ -12,7 +12,7 @@ $(document).ready(function () {
 
                 console.log(response);
                 $('.pages-quantity').text('of ' + numPages + ' pages'); 
-                $('.current').text(currentPage); 
+                currentPage = $('.current').val(); 
 
                 response.response.results.forEach(function (el) {
                     var title = el.webTitle;
