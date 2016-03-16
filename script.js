@@ -1,16 +1,15 @@
 
 
 $(document).ready(function () {
-        
-    function getTopNews() {
-            var requestPage = 3;
-        $.ajax('https://content.guardianapis.com/search?api-key=test&currentPage=3'+ requestPage, {
+        var currentPage = 1;
+    function getTopNews(reqPage) {
+            
+        $.ajax('https://content.guardianapis.com/search?api-key=test&page='+ reqPage, {
             success: function (response) {
 
                 var numPages = response.response.pages;
-                var currentPage = response.response.currentPage;
+                currentPage = response.response.currentPage;
 
-                console.log(response.pages);
                 console.log(response);
                 $('.pages-quantity').text('of ' + numPages + ' pages'); 
                 $('.current').text(currentPage); 
@@ -38,7 +37,7 @@ $(document).ready(function () {
     }    
         
 
-    getTopNews();
+    getTopNews(currentPage);
 
     $('.refresh').on('click', function () {
         $('.news').html('');
@@ -86,7 +85,17 @@ $(document).ready(function () {
     });
 
     $('.next').on('click', function(e) {
+        $('.error-response').html('');
+        $('.news').html('');
+        getTopNews(currentPage+1);
 
+    })
+
+    $('.previous').on('click', function(e) {
+
+        $('.error-response').html('');
+        $('.news').html('');
+        getTopNews(currentPage-1);
     })
 
 })
