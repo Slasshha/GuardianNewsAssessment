@@ -16,19 +16,17 @@ $(document).ready(function () {
 
                 if (currentPage === 1) {
                     $('.previous').prop("disabled",true);
+                } else {
+                     $('.previous').prop("disabled", false);
                 }
 
                 if (currentPage === numPages) {
                      $('.next').prop("disabled",true);
-                }
-
-                else {
-                    $('.previous').prop("disabled", false);
+                } else {
                     $('.next').prop("disabled",false);
                 }
-
-
-
+              
+               
 
 
                 response.response.results.forEach(function (el) {
