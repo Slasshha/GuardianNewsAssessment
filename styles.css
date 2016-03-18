@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-.newsLine {
+.news-line {
      
      border-bottom: 2px solid #1a1a1a;
      border-left: 2px solid #1a1a1a;
@@ -26,7 +26,7 @@ li {
 list-style-type: none;
 }
 
-.newsLine:first-child {
+.news-line:first-child {
     border-top: 2px solid #1a1a1a;
 }   
 
@@ -35,18 +35,18 @@ list-style-type: none;
      background-color: #B2DFEE;
 }
 
-.articleTitle {
+.article-title {
     font-weight: bold;
 }
 
-.arrowCollapsed {
+.arrow-collapsed {
     width: 32px;
     height: 32px;
     float: right;
     background-image: url('images/ic_expand_32.png');	
 }  
 
-.arrowExpanded {
+.arrow-expanded {
     width: 32px;
     height: 32px;
     float: right;
@@ -58,7 +58,7 @@ list-style-type: none;
  
 }
 
-.errorResponse {
+.error-response {
     color: red;
     text-align: center;  
 }

@@ -2,12 +2,13 @@
 
 $(document).ready(function () {
         var currentPage = 1;
+        var numPages;
     function getTopNews(reqPage) {
             
         $.ajax('https://content.guardianapis.com/search?api-key=test&page='+ reqPage, {
             success: function (response) {
 
-                var numPages = response.response.pages;
+                numPages = response.response.pages;
                 currentPage = response.response.currentPage;
 
                 console.log(response);
@@ -31,7 +32,7 @@ $(document).ready(function () {
                     var newsLink = el.webUrl;
                     var newsTextLink = el.apiUrl + '?show-blocks=body&api-key=test';                   
                     
-                    $('.news').append("<li class='newsLine' data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class='articleTitle'>" + title + "</span> <span class='arrowCollapsed arrow'> </span>  </li>");
+                    $('.news').append("<li class='news-line' data-collapsed = 'true' data-text='" + newsTextLink + "'>  <span class='article-title'>" + title + "</span> <span class='arrow-collapsed arrow'> </span>  </li>");
 
             
                 });
@@ -78,7 +79,7 @@ $(document).ready(function () {
                       }
 
                 else {  
-                currentLi.append("<p class='summary'>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").children('.arrow').removeClass('arrowCollapsed').addClass('arrowExpanded');
+                currentLi.append("<p class='summary'>" + textSummary + "<a href='" + newsLink + "'> Read full news </a>  </p>").children('.arrow').removeClass('arrow-collapsed').addClass('arrow-expanded');
                 currentLi.find('.summary').slideDown('slow'); 
                 currentLi.addClass('clicked');
                 }
@@ -90,7 +91,7 @@ $(document).ready(function () {
 
         } else {
             currentLi.find('.summary').slideUp('slow');
-            currentLi.children('.arrow').removeClass('arrowExpanded').addClass('arrowCollapsed');
+            currentLi.children('.arrow').removeClass('arrow-expanded').addClass('arrow-collapsed');
             currentLi.removeClass('clicked');
         }
 
@@ -111,7 +112,15 @@ $(document).ready(function () {
     })
 
     $('.current').on("keypress", function(e) {
-            if (e.keyCode == 13) {
+            var enteredPage = $('.current').val();
+
+            if ( ! $.isNumeric(enteredPage) ) {
+                $(".enteredPageError").html(enteredPage + " is not a valid page number.");
+            } else 
+            if (enteredPage<1 || enteredPage>numPages) {
+                $(".enteredPageError").html("Page number should be within the range 1-"+numPages);
+
+            } else if (e.keyCode == 13) {
             currentPage = $('.current').val();
             $('.news').html('');
             getTopNews(currentPage);         
