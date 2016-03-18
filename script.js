@@ -24,11 +24,8 @@ $(document).ready(function () {
                      $('.next').prop("disabled",true);
                 } else {
                     $('.next').prop("disabled",false);
-                }
-              
-               
-
-
+                };
+                       
                 response.response.results.forEach(function (el) {
                     var title = el.webTitle;
                     var newsLink = el.webUrl;
@@ -56,7 +53,7 @@ $(document).ready(function () {
 
     $('.refresh').on('click', function () {
         $('.news').html('');
-        getTopNews();
+        getTopNews(currentPage);
     });
 
       
@@ -113,6 +110,14 @@ $(document).ready(function () {
         getTopNews(currentPage-1);
     })
 
+    $('.current').on("keypress", function(e) {
+            if (e.keyCode == 13) {
+            currentPage = $('.current').val();
+            $('.news').html('');
+            getTopNews(currentPage);         
+
+            }
+        });
 
 
 
