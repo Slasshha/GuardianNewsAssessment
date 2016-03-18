@@ -85,7 +85,7 @@ list-style-type: none;
      border-left: 2px solid #1a1a1a;
      border-right: 2px solid #1a1a1a;
      border-color: black;
-     min-height:10px;     
+       
      list-style-type: none;
      padding-left: 10px;
      padding-top: 10px;
@@ -105,4 +105,9 @@ width:1000px;
 
 .current {
     width: 30px;
+}
+
+.enteredpage-error {
+    text-align: center; 
+     padding-top: 25px;
 }
