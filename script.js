@@ -115,10 +115,10 @@ $(document).ready(function () {
             var enteredPage = $('.current').val();
 
             if ( ! $.isNumeric(enteredPage) ) {
-                $(".enteredPageError").html(enteredPage + " is not a valid page number.");
+                $(".enteredpage-error").html(enteredPage + " is not a valid page number.");
             } else 
             if (enteredPage<1 || enteredPage>numPages) {
-                $(".enteredPageError").html("Page number should be within the range 1-"+numPages);
+                $(".enteredpage-error").html("Page number should be within the range 1-"+numPages);
 
             } else if (e.keyCode == 13) {
             currentPage = $('.current').val();
